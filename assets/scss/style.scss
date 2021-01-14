@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+div {
+    @include changeBackgroundColor($primary-color);
+    @include square(300px);
+
+    a {
+        @include changeColor($terciary-color);
+        /* normal-font-size */
+        @include changeFontSize($normal-font-size);
+    }
+
+    h2 {
+        @include changeBackgroundColor($secondary-color);
+        @include changeColor($primary-color);
+        /* big-font-size */
+        @include changeFontSize($big-font-size);
+        font-family: $default-font-family;
+    }
+
+    p {
+        /* small-font-size */
+        @include changeFontSize();
+    }
+
+    &:not(.first) {
+        @include square(200px, 20px);
+    }
+}
